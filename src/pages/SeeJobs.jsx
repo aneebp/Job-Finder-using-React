@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import JobList from "./JobList";
-import Spinner from "./Spinner";
-
-function Jobs() {
+import JobList from "../components/JobList";
+import Spinner from "../components/Spinner";
+function SeeJobs() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const res = await fetch("/api/?_limit=3");
+        const res = await fetch("/api");
         const data = await res.json();
         setJobs(data);
       } catch (errr) {
@@ -43,4 +42,4 @@ function Jobs() {
     </>
   );
 }
-export default Jobs;
+export default SeeJobs;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function JobList({ job }) {
   const [FullDescription, setFullDescription] = useState(false);
@@ -34,12 +35,12 @@ function JobList({ job }) {
               <i className="fa-solid fa-location-dot text-lg"></i>
               {job.location}
             </div>
-            <a
-              href="job.html"
+            <Link
+              to={job.id}
               className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
             >
               Read More
-            </a>
+            </Link>
           </div>
         </div>
       </div>
