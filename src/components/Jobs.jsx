@@ -9,7 +9,7 @@ function Jobs() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const res = await fetch("/api/?_limit=3");
+        const res = await fetch("/api/jobs/?_limit=6");
         const data = await res.json();
         setJobs(data);
       } catch (errr) {

@@ -8,7 +8,7 @@ function SeeJobs() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const res = await fetch("/api");
+        const res = await fetch("/api/jobs");
         const data = await res.json();
         setJobs(data);
       } catch (errr) {
@@ -33,7 +33,7 @@ function SeeJobs() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {jobs.map((job) => (
-                <JobList job={job} id={job.id}></JobList>
+                <JobList job={job}  id={job.id}></JobList>
               ))}
             </div>
           )}
